@@ -1,0 +1,8 @@
+Hardware/System -Fxxc0z 
+Graphics -Gaz
+Audio -Aaz
+Drive/Disk -daz
+Swap -aj
+Partition -paz
+Network -Naz
+Repo -r
