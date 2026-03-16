@@ -1,8 +1,10 @@
-Hardware/System -Fxxc0z 
-Graphics -Gaz
-Audio -Aaz
-Drive/Disk -daz
-Swap -aj
-Partition -paz
-Network -Naz
-Repo -r
+---Inxi---
+Hardware/System inxi -Fxxc0z 
+Graphics inxi -Gaz
+Audio inxi -Aaz
+Drive/Disk inxi -daz
+Swap inxi -aj
+Partition inxi -paz
+Network inxi -Naz
+Repo inxi -r
+Motherboard inxi -Maz
