@@ -22,7 +22,7 @@ PS2: Nevermind, i should just learn how to properly use wallbash since all the n
 @define-color bg-opaque @main-bg;
 @define-Color bg-notif alpha(@main-bg,0.08);
 @define-color text #FFFFFF;
-@define-color text-disabled #E5E8E8;
+@define-color text-disabled #060606;
 @define-color accent-color @wb-act-bg;
 @define-color border-color alpha(@accent-color, 0.5);
 @define-color close-button alpha(@main-bg,0.5);
