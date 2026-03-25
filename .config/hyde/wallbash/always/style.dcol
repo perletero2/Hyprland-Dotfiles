@@ -1,3 +1,4 @@
+${confDir}/swaync/style.css | hyprctl dispatch -q exec -- "swaync-client -R && swaync-client -rs"
 /* - Import wallbash for text color - */
 
 @import "/home/perletero/.cache/hyde/wallbash/gtk.css";
