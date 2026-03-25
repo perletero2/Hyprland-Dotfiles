@@ -34,6 +34,14 @@
             "mpris"
         ]
     },
+
+    "group/pill#left3": {
+        "orientation": "inherit",
+        "modules": [
+            "mpd",
+            "mpris"
+        ]
+    },
     "modules-center": [
         "group/pill#center"
     ],
