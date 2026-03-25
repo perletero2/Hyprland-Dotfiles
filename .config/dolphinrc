@@ -46,3 +46,6 @@ Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvu
 [Toolbar mainToolBar]
 IconSize=16
 ToolButtonStyle=IconOnly
+
+[VersionControl]
+enabledPlugins=Git
