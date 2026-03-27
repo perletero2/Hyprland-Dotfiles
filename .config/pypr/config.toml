@@ -46,3 +46,13 @@
     unfocus   = "hide"
     close_on_hide = "true"
 
+[scratchpads.ollama]
+    #Dropdown terminal with Ollama chat
+    animation = "fromBottom"
+    class     = "ollama"
+    command   = "[term_with_class] ollama-dropdown ~/.scripts/ollama/model_selector.sh"
+    max_size  = "90% 100%"
+    size      = "75% 60%"
+    lazy      = "true"
+    unfocus   = "hide"
+
