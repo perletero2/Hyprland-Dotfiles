@@ -19,13 +19,6 @@
     # term_with_class = "foot --app-id"
     term_with_class = "kitty --class"
 
-[scratchpads.base]
-
-    animation = "fromTop"
-    max_size  = "90% 100%"
-    size      = "75% 60%"
-    lazy      = "true"
-
 [scratchpads.console]
     # This is a drop-down terminal configuration
     animation = "fromTop"
