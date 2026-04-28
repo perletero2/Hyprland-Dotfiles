@@ -1,0 +1,15 @@
+ani-skip-git r38.12b4960-1
+autojump 22.5.3-11
+curseforge 1.300.0_31983-1
+elephant-all 2.20.3-1
+icat 0.5-2
+manga-tui 0.10.0-1
+pacseek 1.8.6-1
+pear-desktop-bin 3.11.0-2
+pince-git r1680.668fc15-1
+protonup-qt 2.15.0-1
+ruffle-git 1:r16224.f33c508aa-1
+sysz 1.4.3-1
+viu-media 3.3.7-1
+xclicker 1.5.1-1
+zsh-theme-powerlevel10k-git r4313.36f3045d-1

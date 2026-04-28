@@ -19,6 +19,9 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --long -G -a --group-directories-first --git --git-ignore --no-filesize --icons=always --no-time --no-user --no-permissions $realpath'
+#zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # ------ Theme ------ 
 
@@ -26,7 +29,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # ------Load Modules ------
 
-plugins=(git copypath rsync autojump sudo zsh-interactive-cd zsh-autosuggestions you-should-use zsh-syntax-highlighting)
+plugins=(git copypath rsync autojump sudo zsh-interactive-cd zsh-autosuggestions you-should-use zsh-syntax-highlighting fzf-tab)
 source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
 autoload -U compinit && compinit -u
