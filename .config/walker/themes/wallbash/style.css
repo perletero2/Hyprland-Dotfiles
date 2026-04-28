@@ -1,4 +1,4 @@
-@define-color window_bg_color rgba(42,42,58,0.5);
+@define-color window_bg_color rgba(42,42,58,0.6);
 @define-color accent_bg_color rgba(241,217,194,0.4);
 @define-color theme_fg_color #FFFFFF;
 @define-color error_bg_color #C34043;
@@ -44,6 +44,7 @@ scrollbar {
 }
 
 .box {
+  
 }
 
 .search-container {

@@ -1,5 +1,8 @@
 $HOME/.config/walker/themes/wallbash/style.css
-@define-color window_bg_color <wallbash_pry1_rgba(0.5)>;
+/* No idea why but wallbash just ignore this file, everything seems correct yet it refused to be parsed after the first time ...
+
+*/
+@define-color window_bg_color <wallbash_pry1_rgba(0.6)>;
 @define-color accent_bg_color <wallbash_pry4_rgba(0.4)>;
 @define-color theme_fg_color #<wallbash_txt1>;
 @define-color error_bg_color #C34043;
