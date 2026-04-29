@@ -39,11 +39,11 @@
     unfocus   = "hide"
     close_on_hide = "true"
 
-[scratchpads.ollama-selector]
+[scratchpads.ollama-manager]
     #Dropdown terminal with Ollama chat
     animation = "fromBottom"
     class     = "ollama"
-    command   = "[term_with_class] ollama-dropdown ~/.scripts/ollama/model_selector.sh"
+    command   = "[term_with_class] ollama-dropdown ~/.scripts/ollama/ollama-menu.sh -m"
     max_size  = "90% 100%"
     size      = "75% 60%"
     lazy      = "true"
@@ -61,7 +61,7 @@
     #Dropdown terminal with Ollama chat
     animation = "fromBottom"
     class     = "ollama-quick"
-    command   = "[term_with_class] ollama-dropdown ~/.scripts/ollama/quick_chat.sh"
+    command   = "[term_with_class] ollama-dropdown ~/.scripts/ollama/ollama-menu.sh -q"
     max_size  = "90% 100%"
     size      = "75% 60%"
     lazy      = "true"

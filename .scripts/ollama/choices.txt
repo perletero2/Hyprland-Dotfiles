@@ -1,5 +1,0 @@
-1 1) Quickchat
-2 2) Choose a model to use
-3 3) Set the default model
-4 4) Manage Models
-5 5) Quit

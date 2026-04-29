@@ -1,5 +1,0 @@
-1 1) Pull a model
-2 2) Remove a model
-3 3) Stop a running model
-4 4) List all models
-5 5) Return
