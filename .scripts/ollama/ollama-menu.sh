@@ -3,11 +3,11 @@ set -euo pipefail
 
 # Configuration
 OLLAMA_API="http://localhost:11434/api/tags"
-SCRIPT_DIR="$HOME/.scripts/ollama"
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 DEFAULT_MODEL="$SCRIPT_DIR/default.txt"
 MENU=("1 1) Quickchat" "2 2) Choose a model to use" "3 3) Set the default model" "4 4) Manage Models" "5 5) Quit")
 MENU_MANAGE=("1 1) Pull a model" "2 2) Remove a model" "3 3) Stop a running model" "4 4) List all models" "5 5) Return")
-#MODELS_LIST=$(curl -s "$OLLAMA_API" | grep -oE '"name":"[^"]*"' | cut -d'"' -f4) #Alternative way to grep model list, plan to implement it as the main way with ollama list as a fallback.
+#MODELS_LIST=$(curl -s "$OLLAMA_API" | grep -oE '"name":"[^"]*"' | cut -d'"' -f4) #Alternative way to grep model list, still need to see which way is better before implementing it as the main way with the other as a fallback.
 
 # Check if Ollama is running
 check_ollama() {
@@ -19,7 +19,6 @@ check_ollama() {
 
 # Main menu
 show_menu() {
-    check_ollama
     local choice
     choice=$(printf "%s\n" "${MENU[@]}" | fzf --reverse --with-nth='2..' --accept-nth 1 --prompt "🎮 Ollama Menu Manager")
     
@@ -58,12 +57,19 @@ option_choose_model() {
 
 # Option 3: Set the default model
 option_set_default() {
+
+    if [[ ! -f $DEFAULT_MODEL ]]; then
+        touch "$DEFAULT_MODEL"
+    fi
+
       # Show menu with FZF
     local DEFAULT
     DEFAULT=$(ollama list 2>/dev/null | awk 'NR > 1 {print $1}' | fzf --height 25 --prompt "Select a Default Model :" --accept-nth 1 --no-sort --preview "ollama show {1}" --preview-window right) 
     if [ -n "$DEFAULT" ]; then
-        echo "$DEFAULT" > "$SCRIPT_DIR/default.txt"
+        echo "$DEFAULT" > "$DEFAULT_MODEL"
         echo "✅ Default model set to: '$DEFAULT'"
+    else
+        echo "❌ No model available. Pull a model first and retry."
     fi
 }
 
@@ -81,20 +87,20 @@ option_manage_models() {
                     echo "✅ Model '$model' is already installed."
                 else
                     ollama pull "$model"
-                    echo "✅ '$model' pulled."
+                    echo "✅ '$model' downloading."
                 fi
             else
                 echo "❌ No model name provided."
             fi
             ;;
-        2)
+        2)check_ollama
             local model
             model=$(ollama list 2>/dev/null | awk 'NR > 1 {print $1}' | fzf --height 25 --prompt "Select model to remove: ")
             if [ -n "$model" ]; then
                 ollama rm "$model"
-                    echo "✅ '$model' removed."
+                    echo "✅ Removing '$model'."
             else
-                echo "❌ No model name provided."
+                echo "❌ No models to remove."
             fi
             ;;
         3)
@@ -125,7 +131,7 @@ option_manage_models() {
 }
 
 case "${1:-}" in
-        -q) option_quick_chat;;
-        -m) option_manage_models;;
-        *) show_menu;;
+        -q) check_ollama; option_quick_chat;;
+        -m) check_ollama; option_manage_models;;
+        *) check_ollama; show_menu;;
 esac     
