@@ -52,7 +52,7 @@
     #Dropdown terminal with Ollama chat
     animation = "fromBottom"
     class     = "ollama-menu"
-    command   = "[term_with_class] ollama-dropdown ~/.scripts/ollama/chat-menu.sh"
+    command   = "[term_with_class] ollama-dropdown ~/.scripts/ollama/ollama-menu.sh"
     max_size  = "90% 100%"
     size      = "75% 60%"
     lazy      = "true"

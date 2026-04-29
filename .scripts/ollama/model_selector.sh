@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eou pipefail
+set -euo pipefail
 
 # Configuration
 OLLAMA_API="http://localhost:11434/api/tags"
