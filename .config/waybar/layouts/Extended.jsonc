@@ -30,7 +30,6 @@
         "modules": [
             "idle_inhibitor",
             "clock",
-            "mpd",
             "mpris"
         ]
     },
@@ -48,8 +47,7 @@
     "group/pill#center": {
         "orientation": "inherit",
         "modules": [
-          "hyprland/workspaces",
-          "hyprland/window"
+          "hyprland/workspaces"
         ]
     },
     "modules-right": [

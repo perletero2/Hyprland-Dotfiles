@@ -86,8 +86,8 @@ option_manage_models() {
                 if ollama list 2>/dev/null | grep -q "^${model}$"; then
                     echo "✅ Model '$model' is already installed."
                 else
-                    ollama pull "$model"
-                    echo "✅ '$model' downloading."
+                    ollama pull "$model" || { echo "❌ Failed to pull '$model'"; exit 1; }
+                    echo "✅ '$model' downloaded."
                 fi
             else
                 echo "❌ No model name provided."

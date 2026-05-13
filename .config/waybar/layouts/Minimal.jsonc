@@ -30,8 +30,7 @@
     "group/pill#center": {
         "orientation": "inherit",
         "modules": [
-          "hyprland/workspaces",
-          "hyprland/window"
+          "hyprland/workspaces"
         ]
     },
     "modules-right": [
