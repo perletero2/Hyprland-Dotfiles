@@ -196,5 +196,22 @@ return {
     require("nvim-treesitter.configs").setup(opts)
     end,
   },
+
+  -- HyDE Theme 
+
+  {
+    "iamharshdabas/hyde.nvim",
+    opts = {},
+  },
+
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    dependencies = { "hyde.nvim" },
+    config = function()
+      require("hyde").setup_tokyonight()
+    end,
+  },
 }
 

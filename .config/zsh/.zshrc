@@ -121,6 +121,7 @@ alias fastfetch='clear && fastfetch'
 #alias fsys='fuzzy-sys'
 alias yt-mp3="yt-dlp --no-keep-video -t mp3 -o '%(artist)s - %(title)s.%(ext)s' -P /mnt/Data/Musique/Youtube-dl/yt-dlp/"
 alias hardware="~/.scripts/inxilogs/hardware.sh"
+alias pkgdep="pacman -Qq | fzf --preview 'pactree -lur {} | sort' --layout reverse --bind 'enter:execute(pactree -lu {} | sort | less)'"
 
 # ------ Exports ------
 
@@ -136,3 +137,6 @@ eval $(thefuck --alias fuck)
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# opencode
+export PATH=/home/perletero/.opencode/bin:$PATH
