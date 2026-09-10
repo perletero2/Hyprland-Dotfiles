@@ -1,5 +1,8 @@
 # Basic dotfiles
 
+This repo is used to store my dotfiles for my Hyprland setup (currently using Noctalia), this is not complete and a lot of dotfiles need to be added. 
+
+
 ### Required
 
 - [x] git  
@@ -10,11 +13,11 @@
 - [x] Kitty   
 - [x] Nvim/NvChad #Use [NvChad](https://nvchad.com/docs/quickstart/install) if lazy or [Snacks](https://github.com/folke/snacks.nvim) if not
 
-## ZSH Requirements
+## Additional
 
 ### Zsh Plugins
+
 - [x] git  
-- [x] autojump  
 - [x] sudo  
 - [x] zsh-interactive-cd  
 - [x] zsh-autosuggestions  
@@ -22,21 +25,6 @@
 - [x] zsh-syntax-highlighting  
 - [x] copypath
 - [x] rsync
-
-### Additional apps 
-
-- [x] FZF  
-- [x] Bat  
-- [x] Eza  
-- [x] Zoxide  
-- [x] Ripgrep
-- [x] Powerlevel10k 
-- [x] Thefuck  
-
-## Theme
-
-- [x] [Kvantum](https://github.com/tsujan/Kvantum/tree/master/Kvantum)
-- [x] Wallbash
 
 ## ToDo
 
