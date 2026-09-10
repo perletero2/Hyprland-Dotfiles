@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Cursor
+
+HYPRCURSOR_THEME="Qogir"
+HYPRCURSOR_SIZE="20"
+
+export HYPRCURSOR_THEME HYPRCURSOR_SIZE
