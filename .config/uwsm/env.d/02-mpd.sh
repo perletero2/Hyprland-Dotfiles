@@ -1,4 +1,1 @@
-MPD_HOST="0.0.0.0"
-MPD_PORT="6666"
-
-export MPD_HOST MPD_PORT
+../../../dotfiles/.config/uwsm/env.d/02-mpd.sh
