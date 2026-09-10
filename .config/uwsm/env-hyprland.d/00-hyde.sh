@@ -12,7 +12,7 @@ GDK_SCALE="${GDK_SCALE:-1}"                                          # Set GDK s
 ELECTRON_OZONE_PLATFORM_HINT="${ELECTRON_OZONE_PLATFORM_HINT:-auto}" # Set Electron Ozone Platform Hint to auto, for Electron apps on Wayland
 
 # HyDEs Compositor Configuration
-HYPRLAND_CONFIG="${XDG_DATA_HOME:-$HOME/.local/share}/hypr/hyprland.conf"
+#HYPRLAND_CONFIG="${XDG_DATA_HOME:-$HOME/.local/share}/hypr/hyprland.lua"
 HYPRLAND_NO_SD_NOTIFY=1 # If systemd, disables the sd_notify calls.
 HYPRLAND_NO_SD_VARS=1   # Disables management of variables in systemd and dbus activation environments.
 

@@ -117,6 +117,26 @@ return {
     end,
   },
 
+
+  -- Plugin to disable certain LSP warnings (mainly for hyprland config)
+{
+  "m-gail/diagnostic_manipulation.nvim",
+    event = "VeryLazy",
+    init = function ()
+       require("diagnostic_manipulation").setup {
+         blacklist = {
+         function(diagnostic)
+           return string.find(diagnostic.message, "Undefined global `hl`")
+         end
+         --require("diagnostic_manipulation.builtin.tsserver").tsserver_codes({ 6133, 6196 })
+        },
+        whitelist = {
+         -- Your whitelist here
+       }
+    }
+  end
+},
+
   -- load luasnips + cmp related in insert mode only
   {
     "hrsh7th/nvim-cmp",

@@ -108,9 +108,9 @@ export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/fzf-opts"
 # ------ Aliases ------
 
 alias config='nvim ~/.config/zsh/.zshrc'
-alias hyprkey='nvim ~/.config/hypr/keybindings.conf'
-alias hyprcfg='nvim ~/.config/hypr/userprefs.conf'
-alias hyprstart='nvim ~/.config/hypr/startup.conf'
+alias hyprkey='nvim ~/.config/hypr/keybindings.lua'
+alias hyprcfg='nvim ~/.config/hypr/userprefs.lua'
+alias hyprstart='nvim ~/.config/hypr/startup.lua'
 alias nv='nvim'
 alias c='clear'
 alias bat='bat -n --color=always'
