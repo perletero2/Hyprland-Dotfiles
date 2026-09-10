@@ -13,10 +13,9 @@ hl.window_rule({
 --------------------------
 
 hl.window_rule({
-    name = "hyde_picture_in_picture",
+    name = "picture_in_picture",
     match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
     tag = "+picture-in-picture",
-    tag = "+hyde_picture_in_picture",
     float = true,
     keep_aspect_ratio = true,
     move = { "monitor_w * 0.73", "monitor_h * 0.72" },
