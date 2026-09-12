@@ -1,1 +1,0 @@
-../../../dotfiles/.config/uwsm/env-hyprland.d/00-hyde.sh

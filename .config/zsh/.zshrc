@@ -31,7 +31,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git copypath rsync sudo fzf-tab zsh-interactive-cd zsh-autosuggestions you-should-use zsh-syntax-highlighting)
 source <(fzf --zsh)
-autoload -U compinit && compinit -u
+#autoload -U compinit && compinit -u
 source $ZSH/oh-my-zsh.sh
 
 # ------ History ------

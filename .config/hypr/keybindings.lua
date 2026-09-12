@@ -55,12 +55,19 @@ hl.bind(mainMod .. " + Down", hl.dsp.focus({ direction = "down" }), { descriptio
 hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"), { description = "Window Switcher" })
 hl.bind(mainMod .. " + Page_Down", hl.dsp.layout("swapwithmaster"), { description = "Switch Master Window" })
 
--- 4. Resize Active Window
+-- 4. Resize & Move Active Window
 
 hl.bind(mainMod .. " + SHIFT + Right", hl.dsp.window.resize({ x = 30, y = 0, relative = true }), { description = "Resize Window Right" })
 hl.bind(mainMod .. " + SHIFT + Left", hl.dsp.window.resize({ x = -30, y = 0, relative = true }), { description = "Resize Window Left" })
 hl.bind(mainMod .. " + SHIFT + Up", hl.dsp.window.resize({ x = 0, y = -30, relative = true }), { description = "Resize Window Up" })
 hl.bind(mainMod .. " + SHIFT + Down", hl.dsp.window.resize({ x = 0, y = 30, relative = true }), { description = "Resize Window Down" })
+
+hl.bind(mainMod .. " + ALT + Right", hl.dsp.window.move({ direction = "r" }), { description = "Move Window Right" })
+hl.bind(mainMod .. " + ALT + Left", hl.dsp.window.move({ direction = "l" }), { description = "Move Window Left" })
+hl.bind(mainMod .. " + ALT + Up", hl.dsp.window.move({ direction = "u" }), { description = "Move Window Up" })
+hl.bind(mainMod .. " + ALT + Down", hl.dsp.window.move({ direction = "d" }), { description = "Move Window Down" })
+
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"), { description = "Toggle Dwindle Split"})
 
 -- 5. Move & Resize with mouse
 
@@ -123,7 +130,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"), { de
 
 -- 12. Utilities
 
-hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("hyprctl switchxkblayout"), { description = "Switch Keyboard Layout" })
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("hyprctl switchxkblayout all next"), { description = "Switch Keyboard Layout" })
 hl.bind(mainMod .. " + ALT + G", hl.dsp.exec_cmd(ipc .. "plugin nomadcxx/gamer-mode:service all toggle"), { description = "Toggle Gamemode" })
 hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(ipc .. "panel-toggle alexander/game-launcher:browser"), { description = "Run Game Launcher" })
 
@@ -137,13 +144,12 @@ hl.bind("Print", hl.dsp.exec_cmd(ipc .. "plugin alexander/screen-toolkit:service
 
 -- 14. Theming and Wallpaper
 
-hl.bind(mainMod .. " + ALT + Right", hl.dsp.exec_cmd(ipc .. "wallpaper-next"), { description = "Next Wallpaper" })
-hl.bind(mainMod .. " + ALT + Left", hl.dsp.exec_cmd(ipc .. "wallpaper-previous"), { description = "Previous Wallpaper" })
+hl.bind(mainMod .. " + KP_Add", hl.dsp.exec_cmd(ipc .. "wallpaper-next"), { description = "Next Wallpaper" })
+hl.bind(mainMod .. " + KP_Subtract", hl.dsp.exec_cmd(ipc .. "wallpaper-previous"), { description = "Previous Wallpaper" })
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(ipc .. "panel-toggle wallpaper"), { description = "Wallpaper Select Menu" })
 hl.bind(mainMod .. " + CONTROL + W", hl.dsp.exec_cmd(ipc .. "panel-toggle noctalia/wallhaven:browser"), { description = "Wallhaven Select Menu" })
 hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd(ipc .. "panel-toggle linux-fertxo/hyprland-visual-editor:hve-panel"), { description = "Visual Editor Panel" })
-hl.bind(mainMod .. " + ALT + Up", hl.dsp.exec_cmd(ipc .. "bar-toggle top"), { description = "Toggle Top Bar" })
-hl.bind(mainMod .. " + ALT + Down", hl.dsp.exec_cmd(ipc .. "bar-toggle bottom"), { description = "Toggle Bottom Bar" })
+hl.bind(mainMod .. " + KP_Home", hl.dsp.exec_cmd(ipc .. "bar-toggle top"), { description = "Toggle Top Bar" })
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"), { description = "Control Center" })
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(ipc .. "settings-toggle"), { description = "System Settings" })
 --hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd(ipc .. "")) -- Launch theme select menu

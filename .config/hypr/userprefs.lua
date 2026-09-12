@@ -66,7 +66,13 @@ hl.config({
     master = {
         new_status = "slave",
     },
+
+    dwindle = {
+        preserve_split = true,
+    }
 })
+
+
 
 ------------
 --- Misc ---
