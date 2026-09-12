@@ -1,8 +1,1 @@
-#!/usr/bin/env bash
-
-# Cursor
-
-HYPRCURSOR_THEME="Qogir"
-HYPRCURSOR_SIZE="20"
-
-export HYPRCURSOR_THEME HYPRCURSOR_SIZE 
+../../../dotfiles/.config/uwsm/env-hyprland.d/01-theme.sh
