@@ -121,10 +121,13 @@ alias py='python3'
 alias fastfetch='clear && fastfetch'
 #alias fsys='fuzzy-sys'
 alias yt-mp3="yt-dlp --no-keep-video -t mp3 -o '%(artist)s - %(title)s.%(ext)s' -P /mnt/Data/Musique/Youtube-dl/yt-dlp/"
-alias hardware="~/.scripts/inxilogs/hardware.sh"
+alias hardware="~/.scripts/inxilogs/inxi_menu.sh"
 alias pkgdep="pacman -Qq | fzf --preview 'pactree -lur {} | sort' --layout reverse --bind 'enter:execute(pactree -lu {} | sort | less)'"
-alias llama-start="llama-server --models-dir /home/perletero/.cache/huggingface/models/ --models-preset /home/perletero/.cache/huggingface/presets/config.ini --main-gpu 0 --host 0.0.0.0 --port 8034 --tools all"
+alias llama="llama-server --models-dir /home/perletero/.cache/huggingface/models/ --models-preset /home/perletero/.cache/huggingface/presets/config.ini --main-gpu 0 --host 0.0.0.0 --port 8034 --tools all"
 alias llama-restart='systemctl restart --user llama-auto.service'
+alias llama-start='systemctl start --user --now llama-auto.service'
+alias llama-stop='systemctl stop --user --now llama-auto.service'
+alias llama-status='watch systemctl status --user llama-auto.service -n 40'
 
 # ------ Exports ------
 

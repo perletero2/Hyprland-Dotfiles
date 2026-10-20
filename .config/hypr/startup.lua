@@ -1,4 +1,6 @@
-hl.on("hyprland.start", function () 
+hl.on("hyprland.start", function ()
   hl.exec_cmd("noctalia")
   hl.exec_cmd("/usr/bin/kdeconnectd")
+  hl.exec_cmd("hyprctl setcursor Qogir 26")
+  hl.exec_cmd("/usr/lib/vesktop/vesktop --start-minimized")
 end)

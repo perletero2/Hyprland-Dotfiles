@@ -1,0 +1,138 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "providers": {
+    "llama.cpp": {
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "name": "llama-server",
+      "settings": {
+        "baseURL": "http://127.0.0.1:8033/v1"
+      },
+      "models": {
+        "Qwopus3.5-9B-MTP": {
+          "name": "Qwopus 3.5"
+        },
+        "Qwen3.6-35B-A3B-MTP": {
+          "name": "Qwen 3.6"
+        }
+      }
+    },
+    "Unsloth": {
+      "package": "aisdk:@ai-sdk/openai-compatible",
+      "name": "Unsloth",
+      "settings": {
+        "baseURL": "http://127.0.0.1:8888/v1"
+      },
+      "models": {
+        "Qwen3.6-35B-A3B-MTP": {
+          "name": "Qwen 3.6"
+        }
+      }
+    }
+  },
+
+  "mcp": {
+    "servers": {
+      "semble": {
+        "command": ["uvx", "--from", "semble[mcp]==0.5.4", "semble"],
+        "type": "local",
+        "disabled": false
+      },
+      "Context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp"
+      }
+    }
+  },
+
+  "formatter": {
+    "shfmt": {
+      "enabled": true
+    },
+    "prettier": {
+      "enabled": false
+    }
+  },
+
+  "permissions": [
+    { "action": "*", "resource": "*", "effect": "ask" },
+    { "action": "read", "resource": "*.env", "effect": "deny" },
+    { "action": "read", "resource": "*.env.*", "effect": "deny" },
+    { "action": "shell", "resource": "dd *", "effect": "deny" },
+    { "action": "shell", "resource": "mkfs *", "effect": "deny" },
+    { "action": "shell", "resource": "chmod 777 *", "effect": "deny" },
+    { "action": "shell", "resource": "chown root *", "effect": "deny" },
+    { "action": "read", "resource": "*.env.example", "effect": "allow" },
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "lsp", "resource": "*", "effect": "allow" },
+    { "action": "skill", "resource": "*", "effect": "allow" },
+    { "action": "todowrite", "resource": "*", "effect": "allow" },
+    { "action": "question", "resource": "*", "effect": "allow" },
+    { "action": "subagent", "resource": "*", "effect": "allow" },
+    { "action": "glob", "resource": "*", "effect": "allow" },
+    { "action": "grep", "resource": "*", "effect": "allow" },
+    { "action": "webfetch", "resource": "*", "effect": "allow" },
+    { "action": "websearch", "resource": "*", "effect": "allow" },
+    { "action": "mcp", "resource": "*", "effect": "allow" },
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "git show *", "effect": "allow" },
+    { "action": "shell", "resource": "git branch *", "effect": "allow" },
+    { "action": "shell", "resource": "git rev-parse *", "effect": "allow" },
+    { "action": "shell", "resource": "git worktree *", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "ls -la *", "effect": "allow" },
+    { "action": "shell", "resource": "cat *", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    { "action": "shell", "resource": "tail *", "effect": "allow" },
+    { "action": "shell", "resource": "wc *", "effect": "allow" },
+    { "action": "shell", "resource": "find *", "effect": "allow" },
+    { "action": "shell", "resource": "du *", "effect": "allow" },
+    { "action": "shell", "resource": "df *", "effect": "allow" },
+    { "action": "shell", "resource": "uname *", "effect": "allow" },
+    { "action": "shell", "resource": "whoami *", "effect": "allow" },
+    { "action": "shell", "resource": "date *", "effect": "allow" },
+    { "action": "shell", "resource": "env *", "effect": "allow" },
+    { "action": "shell", "resource": "echo *", "effect": "allow" },
+    { "action": "shell", "resource": "pwd *", "effect": "allow" },
+    { "action": "shell", "resource": "which *", "effect": "allow" },
+    { "action": "shell", "resource": "whereis *", "effect": "allow" },
+    { "action": "shell", "resource": "man *", "effect": "allow" },
+    { "action": "shell", "resource": "dpkg -l *", "effect": "allow" },
+    { "action": "shell", "resource": "apt list *", "effect": "allow" },
+    { "action": "shell", "resource": "systemctl status *", "effect": "allow" },
+    { "action": "shell", "resource": "journalctl *", "effect": "allow" },
+    { "action": "shell", "resource": "ps aux *", "effect": "allow" },
+    { "action": "shell", "resource": "top *", "effect": "allow" },
+    { "action": "shell", "resource": "htop *", "effect": "allow" },
+    { "action": "shell", "resource": "free *", "effect": "allow" },
+    { "action": "shell", "resource": "uptime *", "effect": "allow" },
+    { "action": "shell", "resource": "ip addr *", "effect": "ask" },
+    { "action": "shell", "resource": "ifconfig *", "effect": "ask" },
+    { "action": "shell", "resource": "nc *", "effect": "ask" },
+    { "action": "shell", "resource": "ping *", "effect": "ask" },
+    { "action": "shell", "resource": "netstat *", "effect": "ask" },
+    { "action": "shell", "resource": "wget *", "effect": "ask" },
+    { "action": "shell", "resource": "curl *", "effect": "ask" },
+    { "action": "shell", "resource": "rm -rf *", "effect": "ask" },
+    { "action": "shell", "resource": "rm -r *", "effect": "ask" },
+    { "action": "shell", "resource": "rm *", "effect": "ask" },
+    { "action": "shell", "resource": "git push *", "effect": "ask" },
+    { "action": "shell", "resource": "sudo *", "effect": "ask" },
+    { "action": "shell", "resource": "apt install *", "effect": "ask" },
+    { "action": "shell", "resource": "apt remove *", "effect": "ask" },
+    { "action": "shell", "resource": "apt purge *", "effect": "ask" },
+    { "action": "shell", "resource": "pip install *", "effect": "ask" },
+    { "action": "shell", "resource": "pip uninstall *", "effect": "ask" },
+    { "action": "shell", "resource": "npm install *", "effect": "ask" },
+    { "action": "shell", "resource": "npm uninstall *", "effect": "ask" },
+    { "action": "shell", "resource": "yarn install *", "effect": "ask" },
+    { "action": "shell", "resource": "yarn remove *", "effect": "ask" },
+    { "action": "shell", "resource": "pnpm add *", "effect": "ask" },
+    { "action": "shell", "resource": "pnpm remove *", "effect": "ask" },
+    { "action": "shell", "resource": "cargo install *", "effect": "ask" },
+    { "action": "shell", "resource": "go get *", "effect": "ask" },
+    { "action": "edit", "resource": "*", "effect": "ask" }
+  ]
+}

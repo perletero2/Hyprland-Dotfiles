@@ -1,0 +1,49 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "theme": {
+    "name": "matugen",
+    "mode": "system"
+  },
+  "cursor": {
+    "style": "line"
+  },
+  "leader": {
+    "timeout": 2500
+  },
+  "scroll": {
+    "speed": 3,
+    "acceleration": false
+  },
+  "diffs": {
+    "wrap": "word",
+    "view": "auto"
+  },
+  "mouse": true,
+  "session": {
+    "sidebar": "auto",
+    "scrollbar": true,
+    "thinking": "hide",
+    "markdown": "rendered",
+    "grouping": "auto",
+    "verbosity": "medium"
+  },
+  "animations": true,
+  "tabs": {
+    "mode": "auto",
+    "layout": "horizontal",
+    "indicators": "status"
+  },
+  "prompt": {
+    "image_preview": false
+  },
+  "attention": {
+    "sound": true,
+    "volume": 0.5
+  },
+  "terminal": {
+    "title": false
+  },
+  "debug": {
+    "devtools": false
+  }
+}

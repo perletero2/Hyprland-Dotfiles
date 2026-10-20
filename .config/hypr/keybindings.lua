@@ -10,6 +10,31 @@ local editor = "nvim"
 local ipc = "noctalia msg "
 local pypr = "uwsm-app -- /usr/bin/pypr-client "
 
+-----------------
+--- Functions ---
+-----------------
+
+
+-- Detecting layout
+
+local function layout_bind(bind_table)
+    return function ()
+        local workspace = hl.get_active_special_workspace() or
+                          hl.get_active_workspace()
+
+        if not workspace then
+            return
+        end
+
+        local layout = workspace.tiled_layout
+
+        if bind_table[layout] then
+            hl.dispatch(bind_table[layout])
+        end
+    end
+end
+
+
 ----------------
 --- Keybinds ---
 ----------------
@@ -53,7 +78,6 @@ hl.bind(mainMod .. " + Right", hl.dsp.focus({ direction = "right" }), { descript
 hl.bind(mainMod .. " + Up", hl.dsp.focus({ direction = "up" }), { description = "Focus Up" })
 hl.bind(mainMod .. " + Down", hl.dsp.focus({ direction = "down" }), { description = "Focus Down" })
 hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"), { description = "Window Switcher" })
-hl.bind(mainMod .. " + Page_Down", hl.dsp.layout("swapwithmaster"), { description = "Switch Master Window" })
 
 -- 4. Resize & Move Active Window
 
@@ -67,7 +91,11 @@ hl.bind(mainMod .. " + ALT + Left", hl.dsp.window.move({ direction = "l" }), { d
 hl.bind(mainMod .. " + ALT + Up", hl.dsp.window.move({ direction = "u" }), { description = "Move Window Up" })
 hl.bind(mainMod .. " + ALT + Down", hl.dsp.window.move({ direction = "d" }), { description = "Move Window Down" })
 
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"), { description = "Toggle Dwindle Split"})
+hl.bind(mainMod .. " + J", layout_bind ({
+    dwindle = hl.dsp.layout("togglesplit"),
+    master = hl.dsp.layout("swapwithmaster"),
+}), { description = "Dwindle : Toggle split, Master : Swap with Master" })
+
 
 -- 5. Move & Resize with mouse
 
@@ -84,7 +112,7 @@ hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("code-oss"), { description = "Text Ed
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser), { description = "Web Browser" })
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("lutris"), { description = "Lutris" })
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd(ipc .. "panel-toggle aabidk20/yt-music:panel"), { description = "Youtube Music" })
-hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(ipc .. "panel-toggle weinguyen/procmon:panel"), { description = "System Monitor" })
+hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(ipc .. "panel-toggle tordex/processes:panel"), { description = "System Monitor" })
 hl.bind(mainMod .. " + SHIFT + Escape", hl.dsp.exec_cmd("kitty btop"), { description = "Btop" })
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(ipc .. "panel-toggle yuuto/calculator:panel"), { description = "Calculator" })
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"), { description = "Application Launcher" })

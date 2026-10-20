@@ -12,22 +12,34 @@ hl.window_rule({
 --- Picture in Picture ---
 --------------------------
 
+-- General picture-in-picture
+
 hl.window_rule({
     name = "picture_in_picture",
     match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
     tag = "+picture-in-picture",
     float = true,
     keep_aspect_ratio = true,
-    move = { "monitor_w * 0.73", "monitor_h * 0.72" },
+    move = { "monitor_w * 0.74", "monitor_h * 0.035" },
     size = { "monitor_w * 0.25", "monitor_h * 0.25" },
     pin = true,
+})
+
+--Scrcpy
+
+hl.window_rule({
+    match = { class = "^(scrcpy)$"},
+    float = true,
+    pin = true,
+    size = { "monitor_w * 0.11", "monitor_h * 0.425" },
+    move = { "monitor_w * 0.88", "monitor_h * 0.56" },
 })
 
 ---------------
 --- Opacity ---
 ---------------
 
-hl.window_rule({ match = { class = "^(firefox)$" }, opacity = "1 1 1" })
+hl.window_rule({ match = { class = "^(firefox)$" }, opacity = "1 override 1 override 1 override" })
 hl.window_rule({ match = { class = "^(brave-browser)$" }, opacity = "0.9 0.9 1" })
 hl.window_rule({ match = { class = "^(code-oss)$" }, opacity = "0.8 0.8 1" })
 hl.window_rule({ match = { class = "^([Cc]ode)$" }, opacity = "0.8 0.8 1" })
@@ -91,6 +103,12 @@ hl.window_rule({ match = { class = "^(io.gitlab.adhami3310.Impression)$" }, floa
 hl.window_rule({ match = { class = "^(io.missioncenter.MissionCenter)$" }, float = true }) -- MissionCenter-Gtk
 hl.window_rule({ match = { class = "^(.*dropdown.*)$" }, float = true }) -- Scratchpad dropdowns
 hl.window_rule({ match = { initial_title = "^(.*dropdown.*)$" }, float = true }) -- Scratchpad dropdowns
+hl.window_rule({ match = { class = "^(org.freedesktop.impl.portal.desktop.kde)$" }, float = true, center = true, size = { 900, 600 } }) -- KDE File picker
+hl.window_rule({ match = { class = "^(blueman-manager)$" }, float = true, center = true, size = { 600, 400 } }) -- Bluetooth manager
+hl.window_rule({ match = { initial_title = "^(.*Git Pull — Dolphin.*)$" }, float = true }) -- Dolphin Git pull
+
+
+hl.window_rule({ match = { initial_title = "^(steam_app_default)$"}, fullscreen = true, float = false, sync_fullscreen = true })
 
 ------------
 --- Misc ---
@@ -98,6 +116,10 @@ hl.window_rule({ match = { initial_title = "^(.*dropdown.*)$" }, float = true })
 
 -- workaround for jetbrains IDEs dropdowns/popups cause flickering
 hl.window_rule({ match = { class = "^(.*jetbrains.*)$" }, no_initial_focus = true })
+
+-- Make Ark password popup stay on top
+hl.window_rule({ match = { initial_title = "^(.*Password — Ark.*)$" }, center = true })
+hl.window_rule({ match = { initial_title = "^(.*Extracting one file — Ark.*)$" }, move = {"(monitor_w*0.4)", "(monitor_h*0.8)"} })
 
 -------------------
 --- Layer Rules ---
