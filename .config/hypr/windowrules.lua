@@ -86,6 +86,9 @@ hl.window_rule({ match = { class = "^(io.gitlab.adhami3310.Impression)$" }, opac
 hl.window_rule({ match = { class = "^(io.missioncenter.MissionCenter)$" }, opacity = "0.8 0.8" }) -- MissionCenter-Gtk
 hl.window_rule({ match = { class = "^(io.github.flattool.Warehouse)$" }, opacity = "0.8 0.8" }) -- Warehouse-Gtk
 
+hl.window_rule({ match = { class = "^(com.gabm.satty)$" }, opacity = "1 override 1 override 1 override" })
+
+
 ----------------
 --- Floating ---
 ----------------
